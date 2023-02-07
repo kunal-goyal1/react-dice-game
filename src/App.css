@@ -1,38 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: rgb(171, 31, 31);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 80%;
+  margin: auto;
+  /* border: 2px solid black; */
+  box-shadow: rgb(60 66 87 / 12%) 0px 7px 14px 0px, rgb(0 0 0 / 12%) 0px 3px 6px 0px;
   display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 600px;
+  margin-top: 50px;
+}
+
+.player {
+  display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  background-color: rgb(243, 197, 197);
+  position: relative;
+}
+
+.new-game {
+  position: absolute;
+  right: 50%;
+  top: 30px;
+  transform: translate(50%);
+}
+
+.roll-dice{
+  position: absolute;
+  right: 50%;
+  bottom: 50px;
+  transform: translate(50%);
+}
+
+.holds {
+  position: absolute;
+  right: 50%;
+  bottom: 120px;
+  transform: translate(50%);
+}
+
+.active {
+  background-color: lightcoral;
+}
+
+button {
+  background-color: white;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.total-score {
+  color: rgb(171, 31, 31);
+  font-size: 70px;
+}
+
+.current-score {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  bottom: 50px;
+  background-color: rgb(171, 31, 31);
+  width: 150px;
+  border-radius: 10px;
+  height: 80px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  padding: 10px;
+}
+
+.current-score p {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.current {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.score {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+
+.first-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dice {
+  padding: 4px;
+  background-color: tomato;
+  width: 104px;
+  height: 104px;
+  border-radius: 10%;
+  margin-right : 10px;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  top: 200px;
+}
+.dot{
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color:white;
+}
+
+.second-face{
+  display: flex ;
+  justify-content: space-between;
+}
+
+.second-face .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.third-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.third-face .dot:nth-of-type(1) {
+  align-self :flex-end;
+}
+
+.third-face .dot:nth-of-type(2) {
+  align-self :center;
+}
+
+
+.fourth-face , .sixth-face, .fifth-face{
+  display: flex;
+  justify-content: space-between;
+}
+
+.fourth-face .column , .sixth-face .column, .fifth-face .column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fifth-face .column:nth-of-type(2) {
+  justify-content: center;
 }
